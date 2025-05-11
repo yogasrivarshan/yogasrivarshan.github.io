@@ -1,0 +1,467 @@
+
+/*******************************************************************************
+ DEFINE COLORS
+*******************************************************************************/
+
+/* define colors */
+:root {
+  /* color for title and section headers */
+  --main: navy;
+  --main: rgb(78, 25, 9);
+  /* color for links */
+  --link: rgb(10, 37, 119);
+  /* color for links (hover) */
+  --linkhover: rgb(23, 66, 194);
+  /* color for journals */
+  --journal: rgb(106,24,6);
+  /* color for html background */
+  --background: rgb(255, 255, 245);
+  /* color for main text */
+  --fontmain:rgb(52, 61, 52);
+  /* color for abstracts' text */
+  --fontabstract:rgb(29, 44, 38);
+}
+
+/*******************************************************************************
+ INITIALIZE SETTINGS
+*******************************************************************************/
+
+/* set global parameters */
+*{
+  font-family: 'Quicksand';
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.5em;
+  color: inherit;
+  font-size: inherit; 
+  font-weight: inherit;
+  text-decoration: none;
+  background-color: inherit;
+  -webkit-text-size-adjust: none;
+}
+
+/*******************************************************************************
+ MAIN ELEMENTS
+*******************************************************************************/
+
+html{
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 100px;
+}
+body{
+  min-width:880px;
+  max-width:61.8%;
+  color:var(--fontmain);
+  background-color:var(--background);
+  margin:0px auto auto auto;
+  display:grid;
+  grid-template-columns: 200px;
+  grid-column-gap:55px;
+  grid-row-gap:20px;
+}
+.grid1{
+  grid-column: 1;
+}
+.grid2{
+  grid-column: 2;
+}
+.grid3{
+  grid-column: 3;
+}
+.grid12{
+  grid-column: 1/2;
+}
+.grid23{
+  grid-column: 2/3;
+}
+.grid13{
+  grid-column: 1/3;
+}
+p,div{
+  margin-top:3px;
+}
+a{
+  color:var(--link);
+}
+a:hover{
+  color:var(--linkhover);
+  cursor:pointer;
+}
+
+a.address:hover,a.github:hover,a.linkedin:hover{
+  font-weight:bold  
+}
+
+a.address-cv:hover,a.github-cv:hover,a.linkedin-cv:hover{
+  font-weight:normal  
+}
+
+
+ul{
+  padding: 7px 0px 0px 30px;
+  margin:0px;
+  list-style:circle;
+}
+li{
+  margin-bottom:10px;
+}
+li:not(:last-child) {
+  margin-bottom:2px;
+}
+u{
+  text-decoration:underline;
+}
+b{
+  font-weight:bold;
+}
+
+/*******************************************************************************
+ STRUCTURE
+*******************************************************************************/
+
+/* header */
+.header{
+  padding-bottom:15px;  
+}
+/* title of the website */
+.title{
+  color:var(--main);
+  text-align:right;
+  font-family:"Barlow Condensed";
+  font-size:250%;
+  font-weight:bolder;
+  padding-right:15px;
+}
+/* subtitle of the website */
+.subtitle{
+  color:var(--main);
+  text-align:right;
+  font-size:120%;
+  padding-right:15px;
+}
+
+/*coordinates*/
+.coordinates{
+  color:gray;
+  text-align:right;
+  font-size:60%;
+}
+/* navigation  var */
+.nav{
+  text-align:right;
+  margin-top:15px;
+  padding-top:10px;
+  padding-bottom:5px;
+  border-bottom:1px solid var(--main);
+}
+
+.nav {
+  border-bottom: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  gap: 10px;
+}
+
+.nav {
+  text-align: right;
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--main);
+  overflow: hidden; /* Clears the floats */
+}
+
+.nav a.home-cv {
+  float: right; /* Moves the "Home" link to the right */
+}
+
+.nav a.github-cv, .nav a.linkedin-cv, .nav a.address-cv {
+  float: left; /* Keeps all other links on the left */
+}
+
+/* links in navigation bar */
+.onav,.home-cv{
+  color: var(--fontmain);
+  text-align: center;
+  padding-left:7px;
+  padding-right:15px;
+  display:inline-block;
+}
+
+.onav-curr{
+  color: var(--fontmain);
+  text-align: center;
+  padding-left:7px;
+  padding-right:15px;
+  font-weight: bold; 
+  display:inline-block;
+}
+
+.onav-curr:hover{
+  color: var(--fontmain);
+  font-weight: bold; 
+  cursor:pointer
+}
+
+/* footer */
+.footer{
+  text-align:right;
+  padding-top:5px;
+  border-top:1px solid var(--fontmain);
+  margin-top:30px;
+} 
+.footer > a {
+  display:inline-block;
+  padding:5px
+}
+/* Styling for the image */
+.pic {
+  margin:0px auto 20px auto;
+  text-align:center;
+  display:block;
+  border-radius: 5%;
+  width: 100%;
+  display: block; /* Prevent image from having extra spacing below */
+}
+
+/* Styling for the hyperlink inside the image */
+.map-link {
+  position: relative;
+  top: -15%;  /* Position the link 8% from the top of the image */
+  right: -83%;  /* Position the link 8% from the right of the image */
+  font-size: 80%;
+  background-color: rgb(255, 255, 255, 0.45); /* Semi-transparent white background */
+  padding: 5px 5px;  /* Add padding around the text */
+  border-radius: 5px; /* Optional: rounded corners for the link */
+  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: shadow for better visibility */
+}
+
+.map-link:hover {
+  background-color: rgb(255, 255, 255, 0.70);
+}
+/* div for research, teaching, etc */
+.section{
+  margin-top:0px;
+  width:100%;  
+}
+/* div for each item in sections */
+.subsection{
+  margin-bottom:15px;
+  line-height:1.6;
+  width:100%;
+  text-align: justify;
+}
+/* section headings */
+h1{
+  color:var(--main);
+  font-size:150%;
+  margin-bottom:15px;
+  margin-top:0px;
+}
+/* paper titles */
+h2{ 
+  color:var(--main);
+  font-size:inherit;
+}
+
+/*CV html section*/
+.cvitem{
+  display:flex;
+  justify-content:space-between;
+}
+.cvitem .heading{
+  color:var(--main);
+  text-align: left;
+  font-weight: bold;
+}
+.cvitem .year {
+  color:var(--fontmain);
+  text-align: right;
+  font-style: italic;
+  font-weight:normal;
+}
+.cvsubitem{
+  text-align: left;
+  padding-left:5px;
+  color:var(--fontmain);
+}
+
+
+/*******************************************************************************
+ OTHER ELEMENTS
+*******************************************************************************/
+
+/* to set the color to main */
+paper{
+  color:var(--main);
+  font-size:inherit;
+}
+paper::before{ content: open-quote;}
+paper::after{ content: close-quote;}
+/* for journals */
+journal{
+  color:var(--journal);
+  font-size: inherit;
+  font-style: italic;
+}
+/* to set the color to main */
+color{
+  color:var(--main);
+  font-size:inherit;
+}
+/* for papers' abstracts */
+.abstract{
+  color:var(--fontabstract);
+  margin-top:8px;
+  color:#616161;
+  text-align:justify;
+}
+
+/*******************************************************************************
+ LINKS' ICONS
+*******************************************************************************/
+
+/* to show a small icon next to links depending on their content */
+a.pdf::before,
+a.slides::before,
+a.code::before,
+a.paper::before,
+a.github::before,
+a.github-cv::before,
+a.link::before,
+a.more::before,
+a.less::before,
+a.twitter::before,
+a.google::before,
+a.address::before,
+a.address-cv::before,
+a.linkedin::before,
+a.linkedin-cv::before,
+a.coordinates::before,
+.cvsubitem::before{
+  font-family: "FontAwesome";
+  font-size:80%;
+  color:var(--main);
+  margin:0px 6px 0px 3px;
+  padding:0px;
+}
+a.paper::before{    content: "\f0f6 ";}
+a.article::before{  content: "\f02d ";}
+a.pdf::before{      content: "\f1c1 ";}
+a.slides::before{   content: "\f1c4 ";}
+a.code::before{     content: "\f1c9 ";}
+a.github::before,
+a.github-cv::before{   content: "\f092 ";}
+a.more::before{     content: "\f196 ";}
+a.less::before{     content: "\f147 ";}
+a.link::before{     content: "\f08e ";}
+a.twitter::before{  content: "\f099 ";}
+a.address::before,
+a.address-cv::before{  content: "\f0e0 ";}
+a.google::before{   content: "\f1a0 ";}
+a.linkedin::before,
+a.linkedin-cv::before{ content: "\f08c ";}
+a.coordinates::before{content: "\f041";}
+.cvsubitem::before{content:"\f0da "}
+/* for links without href - add it to the class attribute */
+a.empty{
+  color:lightgrey;
+}
+a.empty::before{
+  color:lightgrey;
+}
+a.empty:hover{
+  cursor:not-allowed;
+}
+
+.calendar::before{
+  font-family: "FontAwesome";
+  font-size:100%;
+  color:var(--main);
+  margin:0px 10px 0px 0px;
+  padding:0px;
+  line-height: 1em;
+  content: "\f073 "; 
+}
+
+/*******************************************************************************
+ ADAPT LAYOUT FOR SCREENS OF 900 px OR LESS
+*******************************************************************************/
+
+@media screen and (max-width:1000px) {
+  *{
+    font-size: 15px;
+  }
+  html{
+    padding:20px;
+  }
+  body{
+    margin:0px;
+    min-width:0px;
+    padding:0px 20px 200px 20px;
+  }
+  body{
+    grid-template-columns: 150px auto;
+    display:block;
+  }
+
+  .maincontent{
+    display:block;
+    padding-left:0px;
+    padding-top:15px;
+  }
+  .section{
+    margin-bottom:20px;
+  }
+  .subsection{
+    margin-bottom:10px;
+  }
+  h1{
+    margin-bottom:10px;
+  }
+
+  .footer > a.address, a.github , a.linkedin{
+    display:inline-block;
+  }
+}
+
+/*******************************************************************************
+ ADAPT LAYOUT FOR SCREENS OF 500 px OR LESS
+*******************************************************************************/
+
+@media screen and (max-width:550px) {
+  *{
+    font-size: 13px;
+  }
+  html{
+    padding:10px;
+  }
+  body{
+    display:block;
+  }
+  /* .header{
+    display:none;
+  } */
+  .title{
+    font-size:150%;
+  }
+  .subtitle{
+    font-size:105%;
+  }
+  .nav {
+    padding-top:5px;
+    padding-bottom:5px;
+  }
+  .footer {
+    padding-top:0px;
+    padding-bottom:0px;
+  }
+
+  .maincontent{
+    display:block;
+    padding-left:0px;
+    padding-top:15px;
+  }
+}
